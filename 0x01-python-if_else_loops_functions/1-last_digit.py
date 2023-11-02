@@ -1,11 +1,13 @@
 #!/usr/bin/python3
 import random
+
 number = random.randint(-10000, 10000)
 
-# Calculate the last digit
+# Calculate the last digit (preserving the original sign)
 last_digit = number % 10
 
-# Determine if the last digit is greater than 5, less than 6 and not 0
+# Determine if the last digit is greater than 5,
+# less than 6 and not 0
 if last_digit > 5:
     status = "and is greater than 5"
 elif last_digit == 0:
