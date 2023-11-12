@@ -1,22 +1,23 @@
 #!/usr/bin/python3
 import random
 
+# Generate a random integer between -10000 and 10000 (inclusive)
 number = random.randint(-10000, 10000)
 
-# Calculate the last digit
-last_digit = abs(number) % 10
+# Calculate the last digit (always positive) using the modulo operator
+digit = abs(number) % 10
 
-# Determine if the last digit is greater than 5, less than 6 and not 0
-if last_digit > 5:
-    status = "and is greater than 5"
-elif last_digit == 0:
-    status = "and is 0"
-else:
-    status = "and is less than 6 and not 0"
-
-# Adjust the last_digit's sign based on the original number
+# If the original number is negative, make the last digit negative as well
 if number < 0:
-    last_digit *= -1
+    digit = -digit
 
-# Print the result
-print(f"Last digit of {number} is {last_digit} {status}")
+# Print the message with the last digit information
+print(f"Last digit of {number:d} is {digit:d} and is ", end="")
+
+# Check the value of the last digit and print the appropriate message
+if digit > 5:
+    print("greater than 5")
+elif digit == 0:
+    print("0")
+else:
+    print("less than 6 and not 0")
