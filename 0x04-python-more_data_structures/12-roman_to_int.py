@@ -20,7 +20,8 @@ def roman_to_int(roman_string):
         if not value:
             return 0  # Return 0 if an invalid character is found
 
-        # Check if the current value is greater than or equal to the previous value
+        # Check if the current value is greater than or equal to
+        # the previous value
         if value >= prev_value:
             total += value  # Add the current value to the total
         else:
