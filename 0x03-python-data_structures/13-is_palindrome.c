@@ -1,4 +1,13 @@
-int is_palindrome(listint_t **head) {
+#include "lists.h"
+
+/**
+ * is_palindrome - checks if a singly linked list is a palindrome
+ * @head: pointer to head of list
+ * Return: 0 if it is not a palindrome,
+ * 1 if it is a palndrome
+ */
+int is_palindrome(listint_t **head)
+{
 	listint_t *slow = *head;
 	listint_t *fast = *head;
 	listint_t *prev = NULL; /*pointer to reverse the first half of the list */
