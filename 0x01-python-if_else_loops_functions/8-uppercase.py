@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 def uppercase(s):
     for char in s:
         # Check if the character is a lowercase letter
