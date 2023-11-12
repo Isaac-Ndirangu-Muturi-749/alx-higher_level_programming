@@ -10,4 +10,3 @@ def uppercase(s):
         else:
             # Print characters that are not lowercase letters as they are
             print(char, end="")
-    print()  # Print a newline after processing the string
