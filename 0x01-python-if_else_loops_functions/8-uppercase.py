@@ -1,12 +1,18 @@
 #!/usr/bin/python3
 
-def uppercase(s):
-    for char in s:
-        # Check if the character is a lowercase letter
-        if 'a' <= char <= 'z':
-            # Convert the lowercase letter to uppercase by adjusting its ASCII value
-            uppercase_char = chr(ord(char) - ord('a') + ord('A'))
-            print("{}".format(uppercase_char), end="")
-        else:
-            # Print characters that are not lowercase letters as they are
-            print("{}".format(char), end="")
+# Define the `uppercase` function that takes a string as an argument
+def uppercase(str):
+    """Print a string in uppercase."""
+
+    # Iterate through each character in the input string
+    for c in str:
+        # Check if the character is a lowercase letter by comparing its ASCII value
+        if ord(c) >= 97 and ord(c) <= 122:
+            # Convert the lowercase character to uppercase by subtracting 32 from its ASCII value
+            c = chr(ord(c) - 32)
+
+        # Print the character without a newline (using "end=")
+        print("{}".format(c), end="")
+
+    # Print a newline to separate the output from the next line
+    print("")
