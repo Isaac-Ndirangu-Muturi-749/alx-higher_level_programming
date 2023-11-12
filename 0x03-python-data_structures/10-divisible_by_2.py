@@ -13,4 +13,3 @@ def divisible_by_2(my_list=[]):
             result_list.append(False)
 
     return result_list
-
