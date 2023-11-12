@@ -1,7 +1,4 @@
 #include "lists.h"
-#include <stddef.h>  /* Add this for size_t definition */
-#include <stdlib.h>  /* Add this for NULL definition */
-#include "lists.h"
 
 
 /**
