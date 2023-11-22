@@ -14,12 +14,4 @@ class Square:
     Methods:
     - None
     """
-
-    def __init__(self):
-        """
-        Initializes an instance of the Square class.
-
-        Parameters:
-        - None
-        """
-        pass
+    pass
