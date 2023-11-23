@@ -1,9 +1,10 @@
 #!/usr/bin/python3
+"""This module defines a Square class."""
 
 
 class Square:
     """
-    This module defines a Square class that represents a square geometry.
+    Rrepresents a square geometry.
 
     Attributes:
         __size (int): The size of the square.
