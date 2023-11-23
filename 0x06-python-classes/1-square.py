@@ -10,10 +10,10 @@ class Square:
     It is defined by its side length.
 
     Attributes:
-    - __size (int): Private instance attribute representing the size of the square.
+    - __size (int): Private instance attribute representing size of the square
 
     Methods:
-    - __init__(self, size): Initializes an instance of the Square class with a given size.
+    - __init__(self, size): Initializes instance ofSquare class with given size
     """
 
     def __init__(self, size):
