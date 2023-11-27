@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines the Rectangle class with width, height, number_of_instances,
+This module defines the Rectangle class with width, height, number_of_instances
 and print_symbol attributes.
 """
 
@@ -16,11 +16,13 @@ class Rectangle:
         print_symbol: The symbol used for string representation.
 
     Methods:
-        __init__(self, width=0, height=0): Initializes a rectangle with a given width and height.
+        __init__(self, width=0, height=0): Initializes a rectangle with a
+        given width and height.
         area(self): Calculates and returns the area of the rectangle.
         perimeter(self): Calculates and returns the perimeter of the rectangle.
         __str__(self): Returns a string representation of the rectangle.
-        __repr__(self): Returns a string representation that can be used to recreate the object.
+        __repr__(self): Returns a string representation that can be
+        used to recreate the object.
 
     Raises:
         TypeError: If width or height is not an integer.
@@ -130,8 +132,7 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return '\n'.join([str(self.print_symbol) * self.__width \
-            for _ in range(self.__height)])
+        return '\n'.join([str(self.print_symbol) * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
         """
