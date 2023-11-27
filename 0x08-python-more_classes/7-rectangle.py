@@ -50,26 +50,12 @@ class Rectangle:
 
     @property
     def width(self):
-        """
-        Retrieve the width of the rectangle.
-
-        Returns:
-            int: The width of the rectangle.
-        """
+        """Retrieve the width of the rectangle."""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """
-        Set the width of the rectangle.
-
-        Args:
-            value (int): The width to set.
-
-        Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is less than 0.
-        """
+        """Set the width of the rectangle."""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         elif value < 0:
@@ -78,26 +64,12 @@ class Rectangle:
 
     @property
     def height(self):
-        """
-        Retrieve the height of the rectangle.
-
-        Returns:
-            int: The height of the rectangle.
-        """
+        """Retrieve the height of the rectangle."""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """
-        Set the height of the rectangle.
-
-        Args:
-            value (int): The height to set.
-
-        Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is less than 0.
-        """
+        """Set the height of the rectangle."""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
@@ -105,49 +77,25 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """
-        Calculate and return the area of the rectangle.
-
-        Returns:
-            int: The area of the rectangle.
-        """
+        """Calculate and return the area of the rectangle."""
         return self.__width * self.__height
 
     def perimeter(self):
-        """
-        Calculate and return the perimeter of the rectangle.
-
-        Returns:
-            int: The perimeter of the rectangle.
-        """
-        return 2 * (self.__width + self.__height) \
-            if self.__width != 0 and self.__height != 0 else 0
+        """Calculate and return the perimeter of the rectangle."""
+        return 2 * (self.__width + self.__height) if self.__width and self.__height else 0
 
     def __str__(self):
-        """
-        Return a string representation of the rectangle.
-
-        Returns:
-            str: A string representation of the rectangle.
-        """
-        if self.__width == 0 or self.__height == 0:
+        """Return a string representation of the rectangle."""
+        if not (self.__width and self.__height):
             return ""
         lines = [str(self.symbol) * self.__width for _ in range(self.__height)]
-        result = '\n'.join(lines)
-        return result
+        return '\n'.join(lines)
 
     def __repr__(self):
-        """
-        Return a string representation that can be used to recreate the object.
-
-        Returns:
-            str: A string representation of the object.
-        """
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        """Return a string representation that can be used to recreate the object."""
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        """
-        Print a message when an instance of Rectangle is deleted.
-        """
+        """Print a message when an instance of Rectangle is deleted."""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
