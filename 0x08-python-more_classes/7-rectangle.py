@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module defines the Rectangle class with width, height, number_of_instances
-and symbol attributes.
+and print_symbol attributes.
 """
 
 
@@ -13,7 +13,7 @@ class Rectangle:
         __width (int): The width of the rectangle.
         __height (int): The height of the rectangle.
         number_of_instances (int): The number of instances of Rectangle.
-        symbol: The symbol used for string representation.
+        print_symbol: The symbol used for string representation.
 
     Methods:
         __init__(self, width=0, height=0): Initializes a rectangle with a
@@ -30,7 +30,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
-    symbol = "#"
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """
@@ -132,7 +132,7 @@ class Rectangle:
         """
         if self.__width == 0 or self.__height == 0:
             return ""
-        return '\n'.join([str(self.symbol) * self.__width for _ in range(self.__height)])
+        return '\n'.join([str(self.print_symbol) * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
         """
