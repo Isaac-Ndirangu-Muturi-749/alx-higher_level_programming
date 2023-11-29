@@ -1,0 +1,21 @@
+# Run tests using: python3 -m doctest -v ./tests/3-say_my_name.txt
+
+# Test cases for say_my_name function
+
+# Test case 1
+>>> say_my_name("John", "Smith")
+My name is John Smith
+
+# Test case 2
+>>> say_my_name("Walter", "White")
+My name is Walter White
+
+# Test case 3
+>>> say_my_name("Bob")
+My name is Bob
+
+# Test case 4
+>>> say_my_name(12, "White")
+Traceback (most recent call last):
+    ...
+TypeError: first_name must be a string
