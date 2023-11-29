@@ -3,6 +3,7 @@
 This module defines the matrix_divided function.
 """
 
+
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix.
@@ -19,17 +20,14 @@ def matrix_divided(matrix, div):
                    or if each row of the matrix doesn't have the same size,
                    or if div is not a number.
         ZeroDivisionError: If div is equal to 0.
-
-    Example:
-    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
-    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
     """
 
-    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-
-    if not all(isinstance(element, (int, float)) for row in matrix for element in row):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if (not isinstance(matrix, list) or
+            not all(isinstance(row, list) for row in matrix) or
+            not all(isinstance(element, (int, float))
+                    for row in matrix for element in row)):
+        raise TypeError("matrix must be a matrix (list of lists) "
+                        "of integers/floats")
 
     if not all(len(row) == len(matrix[0]) for row in matrix):
         raise TypeError("Each row of the matrix must have the same size")
@@ -41,11 +39,3 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     return [[round(element / div, 2) for element in row] for row in matrix]
-
-if __name__ == "__main__":
-    matrix = [
-        [1, 2, 3],
-        [4, 5, 6]
-    ]
-    result = matrix_divided(matrix, 3)
-    print(result)
