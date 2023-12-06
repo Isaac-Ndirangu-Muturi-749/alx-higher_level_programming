@@ -29,4 +29,5 @@ class Student:
         if attrs is None or not all(isinstance(attr, str) for attr in attrs):
             return self.__dict__
         else:
-            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+            return {attr: getattr(self, attr) for attr in attrs\
+                 if hasattr(self, attr)}
