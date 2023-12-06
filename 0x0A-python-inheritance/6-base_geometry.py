@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a class BaseGeometry with a method area."""
 
+
 class BaseGeometry:
     """Empty class definition."""
 
