@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines functions for writing text files in UTF-8 encoding."""
 
+
 def write_file(filename="", text=""):
     """
     Writes a string to a text file (UTF8) and returns the number
