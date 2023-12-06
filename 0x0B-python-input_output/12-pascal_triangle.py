@@ -2,7 +2,6 @@
 """Defines a function that Generate Pascal's triangle up to n rows."""
 
 
-
 def pascal_triangle(n):
     """Generate Pascal's triangle up to n rows."""
     if n <= 0:
