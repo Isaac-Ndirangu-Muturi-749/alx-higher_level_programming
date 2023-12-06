@@ -1,4 +1,5 @@
 # 7-base_geometry.txt
+# Brennan D Baraban <375@holbertonschool.com>
 
 =============================
 How to Use 7-base_geometry.py
@@ -9,7 +10,7 @@ This modules defines a base geometry class BaseGeometry.
 Instantiation
 =============
 
-``BaseGeometry`` includes no attributes, and accordingly is initialized
+``BaseGeometry`` includes no attributes, and accordingly is initialized 
 with no arguments.
 
 ::
@@ -36,7 +37,7 @@ in a TypeError.
 Methods
 =======
 
-``BaseGeometry`` features two methods - ``area(self)`` and
+``BaseGeometry`` features two methods - ``area(self)`` and 
 ``integer_validator(self, name, value)``. ``area(...)`` is not yet
 implemented.
 
@@ -44,7 +45,7 @@ implemented.
 
     >>> bg = BaseGeometry()
     >>> print(bg.area) # doctest: +ELLIPSIS, +NORMALIZE_WHITESPACE
-    <bound method BaseGeometry.area of <7-base_geometry.BaseGeometry
+    <bound method BaseGeometry.area of <7-base_geometry.BaseGeometry 
      object at...>>
 
 ::
@@ -129,14 +130,14 @@ Both ``name`` and ``value`` must be provided. Otherwise, a TypeError is raised.
 
     >>> bg.integer_validator() # doctest: +NORMALIZE_WHITESPACE
     Traceback (most recent call last):
-    TypeError: integer_validator() missing 2 required positional arguments:
+    TypeError: integer_validator() missing 2 required positional arguments: 
     'name' and 'value'
 
 ::
 
     >>> bg.integer_validator(None) # doctest: +NORMALIZE_WHITESPACE
     Traceback (most recent call last):
-    TypeError: integer_validator() missing 1 required positional argument:
+    TypeError: integer_validator() missing 1 required positional argument: 
     'value'
 
 The method assumes the paramter ``name`` will be a string, but ``name`` of any
