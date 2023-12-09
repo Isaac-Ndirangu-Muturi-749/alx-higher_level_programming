@@ -95,3 +95,8 @@ class Rectangle(Base):
         """Validate if the given value is greater than or equal to 0."""
         if value < 0:
             raise ValueError("{} must be >= 0".format(name))
+
+    def __str__(self):
+        """Return a string representation of the Rectangle."""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
