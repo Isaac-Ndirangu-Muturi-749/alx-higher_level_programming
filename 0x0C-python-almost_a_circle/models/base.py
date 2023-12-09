@@ -3,7 +3,6 @@
 
 import json
 
-
 class Base:
     """Base class for other classes in the project."""
 
@@ -51,7 +50,14 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Return the list represented by json_string."""
+        """Return the list represented by json_string.
+
+        Args:
+            json_string (str): JSON string representing a list of dictionaries.
+
+        Returns:
+            list: List represented by json_string.
+        """
         if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
