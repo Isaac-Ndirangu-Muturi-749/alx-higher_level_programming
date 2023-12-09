@@ -32,6 +32,8 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """Setter for width attribute."""
+        self.validate_integer("width", value)
+        self.validate_positive("width", value)
         self.__width = value
 
     @property
@@ -42,6 +44,8 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """Setter for height attribute."""
+        self.validate_integer("height", value)
+        self.validate_positive("height", value)
         self.__height = value
 
     @property
@@ -52,6 +56,8 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Setter for x attribute."""
+        self.validate_integer("x", value)
+        self.validate_non_negative("x", value)
         self.__x = value
 
     @property
@@ -62,4 +68,21 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Setter for y attribute."""
+        self.validate_integer("y", value)
+        self.validate_non_negative("y", value)
         self.__y = value
+
+    def validate_integer(self, name, value):
+        """Validate if the given value is an integer."""
+        if not isinstance(value, int):
+            raise TypeError("{} must be an integer".format(name))
+
+    def validate_positive(self, name, value):
+        """Validate if the given value is greater than 0."""
+        if value <= 0:
+            raise ValueError("{} must be > 0".format(name))
+
+    def validate_non_negative(self, name, value):
+        """Validate if the given value is greater than or equal to 0."""
+        if value < 0:
+            raise ValueError("{} must be >= 0".format(name))
