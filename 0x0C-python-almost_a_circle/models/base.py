@@ -3,6 +3,7 @@
 
 import json
 
+
 class Base:
     """Base class for other classes in the project."""
 
@@ -80,3 +81,19 @@ class Base:
             dummy_instance = cls()
         dummy_instance.update(**dictionary)
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """Return a list of instances from a JSON file.
+
+        Returns:
+            list: List of instances.
+        """
+        filename = "{}.json".format(cls.__name__)
+        try:
+            with open(filename, "r") as file:
+                json_string = file.read()
+        except FileNotFoundError:
+            return []
+        list_dicts = cls.from_json_string(json_string)
+        return [cls.create(**d) for d in list_dicts]
