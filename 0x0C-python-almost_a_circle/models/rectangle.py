@@ -76,6 +76,11 @@ class Rectangle(Base):
         """Calculate and return the area of the rectangle."""
         return self.__width * self.__height
 
+    def display(self):
+        """Display the rectangle using '#' characters."""
+        for _ in range(self.__height):
+            print("#" * self.__width)
+
     def validate_integer(self, name, value):
         """Validate if the given value is an integer."""
         if not isinstance(value, int):
