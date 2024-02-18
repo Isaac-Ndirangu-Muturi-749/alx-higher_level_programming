@@ -18,11 +18,14 @@ if __name__ == "__main__":
         user=username,
         passwd=password,
         db=database)
+
     cursor = db.cursor()
 
-    # Execute SQL query
-    cursor.execute(
-        "SELECT * FROM states WHERE name=%s ORDER BY id ASC", (state_name,))
+    # Execute SQL query with parameterized query
+    cursor.execute("""SELECT * FROM states
+                   WHERE name LIKE BINARY '{}'
+                   ORDER BY states.id"""
+                   .format(state_name))
 
     # Fetch all rows and display results
     rows = cursor.fetchall()
