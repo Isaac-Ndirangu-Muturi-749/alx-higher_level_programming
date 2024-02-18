@@ -12,11 +12,17 @@ if __name__ == "__main__":
     state_name = sys.argv[4]
 
     # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user=username,
+        passwd=password,
+        db=database)
     cursor = db.cursor()
 
     # Execute SQL query
-    cursor.execute("SELECT * FROM states WHERE name=%s ORDER BY id ASC", (state_name,))
+    cursor.execute(
+        "SELECT * FROM states WHERE name=%s ORDER BY id ASC", (state_name,))
 
     # Fetch all rows and display results
     rows = cursor.fetchall()

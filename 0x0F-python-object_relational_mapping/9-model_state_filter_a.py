@@ -13,7 +13,8 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Connection to MySQL server
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, database))
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, database))
 
     # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
@@ -22,7 +23,9 @@ if __name__ == "__main__":
     session = Session()
 
     # Query for State objects containing the letter 'a'
-    states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+    states = session.query(State).filter(
+        State.name.like('%a%')).order_by(
+        State.id).all()
 
     # Display the results
     for state in states:
