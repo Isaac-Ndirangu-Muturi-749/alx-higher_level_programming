@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Prints the State object with the name passed as argument from the database hbtn_0e_6_usa"""
+"""Prints the State object with the name passed as argument
+from the database hbtn_0e_6_usa"""
 
 import sys
 from model_state import Base, State
@@ -15,7 +16,8 @@ if __name__ == "__main__":
 
     # Connect to MySQL server
     engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, database))
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+            username, password, database))
 
     # Create a configured "Session" class
     Session = sessionmaker(bind=engine)

@@ -12,8 +12,8 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Create engine to connect to MySQL server
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, database),
-                           pool_pre_ing=True)p
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+        username, password, database), pool_pre_ping=True)
 
     # Create session class bound to the engine
     Session = sessionmaker(bind=engine)
