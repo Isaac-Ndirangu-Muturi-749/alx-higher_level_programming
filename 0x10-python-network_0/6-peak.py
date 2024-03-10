@@ -20,9 +20,11 @@ def find_peak(list_of_integers):
         # Calculate the middle index
         mid = (low + high) // 2
 
-        # Compare the middle element with its adjacent element to determine the search direction
+        # Compare the middle element with its adjacent element to determine the
+        # search direction
         if list_of_integers[mid] > list_of_integers[mid + 1]:
-            high = mid  # If the middle element is greater than its right neighbor, search left
+            # If the middle element is greater than right neighbor, search left
+            high = mid
         else:
             low = mid + 1  # Otherwise, search right
 
@@ -41,6 +43,6 @@ if __name__ == "__main__":
 
 
 # The complexity of the provided algorithm is O(log(n)).
-# This is because the algorithm uses a binary search approach to narrow down the
-# search space in each iteration. In each step, the size of the search space is
-# halved, leading to a time complexity of O(log(n)).
+# This is because the algorithm uses a binary search approach to narrow down
+# the search space in each iteration. In each step, the size of the search
+# space is halved, leading to a time complexity of O(log(n)).
